@@ -20,6 +20,10 @@ Built with **React 19 + Vite**. Riso Darkroom aesthetic: warm near-black paper, 
 | Ink | ![#f2ecdd](https://placehold.co/15/f2ecdd/f2ecdd.png) `#f2ecdd` |
 | Ink Soft | ![#cabfad](https://placehold.co/15/cabfad/cabfad.png) `#cabfad` |
 
+## inspiration
+
+Design and structure inspired by [Gazi Jarin](https://www.gazijarin.com) — forked and reskinned with a custom Riso Darkroom aesthetic.
+
 ## setup
 
 ```sh

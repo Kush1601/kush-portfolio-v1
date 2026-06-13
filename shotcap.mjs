@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 2 });
+await p.goto('http://localhost:5173', { waitUntil: 'networkidle', timeout: 30000 });
+await p.waitForTimeout(3000);
+const el = await p.$('.carousel.slide');
+await el.scrollIntoViewIfNeeded();
+await p.waitForTimeout(800);
+await el.screenshot({ path: '/tmp/cap.png' });
+await b.close(); console.log('ok');

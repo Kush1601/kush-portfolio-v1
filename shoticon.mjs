@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 3 });
+await p.goto('http://localhost:5173', { waitUntil: 'networkidle', timeout: 30000 });
+await p.waitForTimeout(3000);
+const el = await p.$('.carousel-caption .external-links');
+await el.scrollIntoViewIfNeeded();
+await p.waitForTimeout(500);
+const box = await el.boundingBox();
+await p.screenshot({ path: '/tmp/icons.png', clip: { x: box.x-30, y: box.y-12, width: box.width+60, height: box.height+24 } });
+await b.close(); console.log('ok');

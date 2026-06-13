@@ -1,0 +1,105 @@
+#about {
+  padding: 80px 0;
+  margin: auto;
+  max-width: 1000px;
+}
+
+.about-description ul {
+  padding-top: 20px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+}
+
+@media only screen and (max-width: 480px) {
+  .about-description ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-description li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 18px;
+  color: var(--slate);
+}
+
+.about-description li::before {
+  content: "▹    ";
+  color: var(--green-bright);
+  position: absolute;
+  left: 0;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-description {
+  font-family: var(--font-display), sans-serif;
+  color: var(--slate);
+  max-width: 600px;
+  font-size: 22px;
+  text-align: justify;
+  margin: 0;
+}
+
+.about-description a,
+.about-description b {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.about-image {
+  padding-left: 40px;
+}
+
+.about-image img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 2px;
+  margin-left: 30px;
+  /* Riso registration frame: hard cobalt block offset behind, coral hairline */
+  border: 1px solid var(--ink);
+  box-shadow: 14px 14px 0 -1px var(--cobalt), 14px 14px 0 0 var(--ink);
+  filter: contrast(1.04) saturate(0.92);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+@media only screen and (max-width: 788px) {
+  .about-image img {
+    max-width: 200px;
+  }
+}
+
+.about-image:hover img {
+  transform: translate(4px, 4px);
+  box-shadow: 8px 8px 0 -1px var(--coral), 8px 8px 0 0 var(--ink);
+}
+
+@media only screen and (max-width: 600px) {
+  #about {
+    padding: 60px 0;
+    padding-left: unset;
+    padding-right: unset;
+  }
+
+  .about-description {
+    font-size: 18px;
+    text-align: justify;
+  }
+
+  .about-description a,
+  .about-description b {
+    font-size: 17px;
+  }
+
+  .about-image img {
+    display: none;
+  }
+
+  .about-content {
+    display: unset;
+  }
+}

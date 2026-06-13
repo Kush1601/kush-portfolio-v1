@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1440, height: 1000 } });
+await p.goto('http://localhost:5173/#gallery', { waitUntil: 'networkidle', timeout: 30000 });
+await p.waitForTimeout(2500);
+await p.evaluate(() => window.scrollTo(0, document.querySelector('#gallery').offsetTop - 70));
+await p.waitForTimeout(1500);
+await p.screenshot({ path: '/tmp/gal_section.png' });
+await p.goto('http://localhost:5173/gallery', { waitUntil: 'networkidle', timeout: 30000 });
+await p.waitForTimeout(2500);
+await p.screenshot({ path: '/tmp/gal_page.png' });
+await b.close(); console.log('ok');

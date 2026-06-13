@@ -1,0 +1,32 @@
+:root {
+  /* Riso Darkroom — warm near-black stock, glowing duotone ink.
+     Legacy var names kept so the whole cascade re-themes from here. */
+  --paper: #16130e;        /* page (warm near-black) */
+  --paper-deep: #100d09;   /* nav / footer wash */
+  --paper-card: #1f1b14;   /* raised cards */
+  --rule: #3a3328;         /* hairline rules + borders */
+  --ink: #f2ecdd;          /* headings (warm off-white) */
+  --ink-soft: #cabfad;     /* body copy */
+  --ink-mute: #8c836f;     /* captions / mono labels */
+  --cobalt: #6877ff;       /* primary riso channel (glow blue) */
+  --coral: #ff6f52;        /* secondary riso channel (glow coral) */
+  --cobalt-tint: rgba(104, 119, 255, 0.14);
+
+  /* Legacy aliases (consumed by inherited component CSS) */
+  --dark-navy: var(--paper-deep);
+  --navy: var(--paper);
+  --light-navy: var(--paper-card);
+  --lightest-navy: var(--rule);
+  --navy-shadow: rgba(26, 24, 22, 0.12);
+  --slate: var(--ink-mute);
+  --light-slate: var(--ink-soft);
+  --lightest-slate: var(--ink);
+  --white: #fbf7ee;
+  --green-bright: var(--cobalt);
+  --green-tint: var(--cobalt-tint);
+  --yellow: var(--coral);
+
+  --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  --font-body: "Public Sans", -apple-system, sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+}

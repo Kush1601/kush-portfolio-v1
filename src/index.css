@@ -1,0 +1,57 @@
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #16130e;
+  color: #f2ecdd;
+}
+
+/* Darkroom depth: warm vignette + a faint duotone glow up top,
+   so the page reads lit rather than flat black. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 80% at 28% 22%, rgba(104, 119, 255, 0.1), transparent 60%),
+    radial-gradient(90% 70% at 80% 30%, rgba(255, 111, 82, 0.07), transparent 55%),
+    radial-gradient(140% 120% at 50% 0%, transparent 55%, rgba(0, 0, 0, 0.45));
+}
+
+/* Film grain: faint fixed texture over the stock. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+code {
+  font-family: "Space Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+}

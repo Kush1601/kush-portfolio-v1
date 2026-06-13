@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
+await p.goto('http://localhost:5173', { waitUntil: 'networkidle', timeout: 30000 });
+await p.waitForTimeout(4500);
+await p.screenshot({ path: '/tmp/remix_top.png' });
+await p.evaluate(() => window.scrollTo(0, document.querySelector('#about').offsetTop - 80));
+await p.waitForTimeout(1200);
+await p.screenshot({ path: '/tmp/remix_about.png' });
+await b.close(); console.log('ok');

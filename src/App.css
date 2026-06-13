@@ -1,0 +1,141 @@
+[id] {
+  scroll-margin-top: 80px;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-section.is-visible > *:nth-child(1) { transition-delay: 0s; }
+.fade-in-section.is-visible > *:nth-child(2) { transition-delay: 0.1s; }
+.fade-in-section.is-visible > *:nth-child(3) { transition-delay: 0.15s; }
+.fade-in-section.is-visible > *:nth-child(4) { transition-delay: 0.2s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.App {
+  font-family: var(--font-body);
+  background-color: var(--paper);
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--cobalt);
+  transition: color 0.18s ease, background-size 0.25s ease;
+}
+
+a:hover {
+  color: var(--coral);
+}
+
+#content {
+  width: 100%;
+}
+
+.rs-steps-horizontal .rs-steps-item-content {
+  text-align: left;
+}
+
+::selection {
+  background: var(--coral);
+  color: var(--paper);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 28px;
+  width: 100%;
+}
+
+.section-header::after {
+  content: "";
+  flex: 1;
+  align-self: center;
+  height: 1px;
+  margin-left: 24px;
+  background-color: var(--rule);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Mono section number, set by each component via data-num */
+.section-title[data-num]::before {
+  content: attr(data-num);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--coral);
+  vertical-align: super;
+  margin-right: 14px;
+  letter-spacing: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .App {
+    flex-direction: column;
+    padding: 0px 24px;
+  }
+
+  #content {
+    padding: 10px 10px;
+    width: 100%;
+  }
+
+  .section-header {
+    width: unset;
+  }
+
+  .section-header::after {
+    display: none;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+}

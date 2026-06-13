@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1440, height: 1000 } });
+const errs=[]; p.on('console', m=>{if(m.type()==='error')errs.push(m.text())});
+p.on('pageerror', e=>errs.push(e.message));
+await p.goto('http://localhost:5173', { waitUntil: 'networkidle', timeout: 30000 });
+await p.waitForTimeout(3500);
+await p.evaluate(()=>window.scrollTo(0,document.body.scrollHeight));
+await p.waitForTimeout(2000);
+await p.screenshot({ path: '/tmp/d_bottom.png', fullPage:false });
+console.log('ERRORS:', errs.length?errs.join(' | '):'none');
+await b.close();

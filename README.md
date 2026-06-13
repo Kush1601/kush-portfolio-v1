@@ -1,48 +1,34 @@
-<p align="center">
-  <img src="https://img.icons8.com/color/48/000000/magritte.png"/>
-</p>
-<h1 align="center">
-  kush-v1
-</h1>
-<p align="center">
-  Personal site for Kush Dudhia — built with Vite and React 19 (Material UI v6, Bootstrap 5).
-  A warm-paper riso aesthetic: duotone cobalt + coral ink, Bricolage Grotesque / Public Sans / Space Mono,
-  numbered editorial sections, and a two-channel misregistered ASCII portrait.
-  Forked and reskinned from <a href="https://github.com/gazijarin/Gazi-V2" target="_blank">gazijarin/Gazi-V2</a>.
-</p>
+# kush-portfolio-v1
 
-## 🛠 set-up
+Personal portfolio for Kush Dudhia — software engineer, CS grad from GWU, interested in AI, healthcare, and data systems.
 
-1. Install the dependencies
+Built with **React 19 + Vite**. Riso Darkroom aesthetic: warm near-black paper, duotone cobalt + coral ink, film grain overlay, interactive ASCII portrait, and a pixel-art platformer game hidden in the page.
 
-   ```sh
-   npm install
-   ```
+## stack
 
-2. Start the development server
+- React 19, React Router, Vite
+- Material UI, Bootstrap 5
+- Bricolage Grotesque / Public Sans / Space Mono
 
-   ```sh
-   npm run dev
-   ```
+## color palette
 
-## 🚀 build and run for production
+| Token | Hex |
+|-------|-----|
+| Paper | ![#16130e](https://placehold.co/15/16130e/16130e.png) `#16130e` |
+| Cobalt | ![#6877ff](https://placehold.co/15/6877ff/6877ff.png) `#6877ff` |
+| Coral | ![#ff6f52](https://placehold.co/15/ff6f52/ff6f52.png) `#ff6f52` |
+| Ink | ![#f2ecdd](https://placehold.co/15/f2ecdd/f2ecdd.png) `#f2ecdd` |
+| Ink Soft | ![#cabfad](https://placehold.co/15/cabfad/cabfad.png) `#cabfad` |
 
-1. Generate a full static production build
+## setup
 
-   ```sh
-   npm run build
-   ```
+```sh
+npm install
+npm run dev
+```
 
+## build
 
-## 🎨 color codes
-
-| Color          | Hex                                                                |
-| -------------- | ------------------------------------------------------------------ |
-| Navy           | ![#0a192f](https://placehold.co/15/0a192f/0a192f.png) `#0a192f` |
-| Light Navy     | ![#112240](https://placehold.co/15/112240/112240.png) `#112240` |
-| Lightest Navy  | ![#233554](https://placehold.co/15/233554/233554.png) `#233554` |
-| Slate          | ![#8892b0](https://placehold.co/15/8892b0/8892b0.png) `#8892b0` |
-| Light Slate    | ![#a8b2d1](https://placehold.co/15/a8b2d1/a8b2d1.png) `#a8b2d1` |
-| Lightest Slate | ![#ccd6f6](https://placehold.co/15/ccd6f6/ccd6f6.png) `#ccd6f6` |
-| White          | ![#e6f1ff](https://placehold.co/15/e6f1ff/e6f1ff.png) `#e6f1ff` |
-| Green          | ![#64ffda](https://placehold.co/15/64ffda/64ffda.png) `#64ffda` |
+```sh
+npm run build
+```
